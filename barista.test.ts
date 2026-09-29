@@ -95,8 +95,6 @@ describe("Barista", () => {
     const coffee = new Coffee("cafe au lait", 7);
     barista.addIngredient("lait", 2);
     coffee.addIngredient("lait", 3);
-  
-
   });
 
   it("ne consomme rien lorsqu'il ne peut pas préparer le café", () => {});
