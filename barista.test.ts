@@ -5,8 +5,8 @@ import { Barista, Coffee, Ingredient } from "./barista.js";
 describe("Coffee", () => {
 
   it("crée un café avec un nom et un prix", () => {
-    const coffee = new Coffee("Cappuccino", 4);
 
+    const coffee = new Coffee("Cappuccino", 4);
     expect(coffee.name).toBe("Cappuccino");
     expect(coffee.price).toBe(4);
   });
@@ -75,17 +75,30 @@ describe("Barista", () => {
 
     coffee.addIngredient("café", 2);
     coffee.addIngredient("lait", 1);
-
     barista.addIngredient("café", 2);
 
     expect(barista.canMakeCoffee(coffee)).toBe(false);
   });
 
-  it("ne peut pas préparer un café lorsque la quantité est insuffisante", () => {});
+  it("ne peut pas préparer un café lorsque la quantité est insuffisante", () => {
+  const barista = new Barista("Gabi");
+  const coffee = new Coffee("cafe au lait", 7);
+  barista.addIngredient("lait", 2);
+  coffee.addIngredient("lait", 3);
 
-  it("consomme les ingrédients lorsqu'il prépare un café", () => {});
+  expect(barista.canMakeCoffee(coffee)).toBe(false);
+});
+});
+
+  it("consomme les ingrédients lorsqu'il prépare un café", () => {
+    const barista = new Barista("Gabi");
+    const coffee = new Coffee("cafe au lait", 7);
+    barista.addIngredient("lait", 2);
+    coffee.addIngredient("lait", 3);
+  
+
+  });
 
   it("ne consomme rien lorsqu'il ne peut pas préparer le café", () => {});
 
   it("retourne le prix lorsqu'un café est commandé", () => {});
-});
