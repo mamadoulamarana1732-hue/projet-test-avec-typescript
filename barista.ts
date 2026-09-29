@@ -30,21 +30,15 @@ export class Ingredient {
     this.quantity += quantity;
   }
 
-  // removeQuantity(quantity: number): boolean {
-  //   if (quantity > this.quantity) {
-  //     return false;
-  //   }
+  removeQuantity(quantity: number): boolean {
+    if (quantity > this.quantity) {
+      return false;
+    }
 
-  //   this.quantity -= quantity;
-  //   return true;
-  // }
-  removeQuantity(quantity: number): void {
-  if (quantity > this.quantity) {
-    throw new Error("Quantité invalide");
+    this.quantity -= quantity;
+    return true;
   }
 
-  this.quantity -= quantity;
-}
 }
 
 export class Barista {
